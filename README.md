@@ -1,5 +1,8 @@
 # Test-ZettaByte
 
+URL BASE :
+https://dbtest27.herokuapp.com/api/v1/
+
 / (for pagination minimal 5) METHOD GET
 /published (all pagination) METHOD GET
 
