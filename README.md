@@ -21,3 +21,5 @@
 /delete-comment/:id (for delete the comment) METHOD DELETE
 /get-comments (for get all comments) METHOD GET
 /get-comment/:id (for get comment by id) METHOD GET
+
+thanks
