@@ -108,8 +108,9 @@ exports.deleteComment = async (req, res) => {
 
 exports.getComments = async (req, res) =>{
     try {
-        let data
-        data = await comment.findAll({
+        let data = await comment.findAndCountAll({
+            limit : 10,
+            offset : 15,
             include: [
                 {
                     user,
@@ -126,7 +127,8 @@ exports.getComments = async (req, res) =>{
         })
         res.send({
             status: 'Get comments success',
-            data
+            content : data.rows,
+            totalPage : data.count
         })
     } catch (e) {
         console.log(e)

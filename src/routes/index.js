@@ -1,7 +1,7 @@
 const express = require('express')
 const { auth } = require('../middlewars/auth')
 const { register, login, getUsers, getUser } = require('../controllers/user')
-const { addArticle, updateArticle, deleteArticle, getArticles, getArticle, findAll, findAllPublished } = require('../controllers/article')
+const { addArticle, updateArticle, deleteArticle, getArticles, getArticle } = require('../controllers/article')
 const { addComment, updateComment, deleteComment, getComments, getComment } = require('../controllers/comment')
 const router = express.Router()
 
@@ -10,8 +10,6 @@ router.post('/sign-in', login)
 router.get('/get-users', getUsers)
 router.get('/get-user/:id', getUser)
 
-router.get('/', findAll)
-router.get('/published', findAllPublished)
 
 router.post('/add-article', auth, addArticle)
 router.patch('/update-article/:id', auth, updateArticle)
